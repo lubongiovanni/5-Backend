@@ -1,0 +1,23 @@
+header.container.mb-3
+    h1.text-center.text-decoration-underline.fst-italic Vista de Productos
+if products.length > 0
+    div.table-responsive
+        table.table.table-dark.table-hover.container
+            thead
+                tr(style='color: white; font-style: italic')
+                    th #
+                    th Producto
+                    th Precio
+                    th Imagen
+            tbody
+                each x in products
+                    tr
+                        th(style='font-weight: lighter')= x.id
+                        th(style='font-weight: lighter')= x.title
+                        th(style='font-weight: lighter')= x.price
+                        th
+                            img(width='40', height='40', src= x.thumbnail, alt='img')
+        a.btn.btn-primary(href='/api') Ir al Formulario
+else
+    h3.alert.alert-danger ¡No hay productos agregados!
+    a.btn.btn-primary(href='/api') Ir al Formulario

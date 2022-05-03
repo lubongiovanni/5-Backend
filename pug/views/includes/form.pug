@@ -1,0 +1,15 @@
+header.container
+    h1.text-center.text-decoration-underline.fst-italic Ingrese un Producto
+
+form.container(action='api/products' method='POST')
+    div.mb-3
+        label.form-label.text-decoration-underline(for='title') Nombre del Producto:
+        input#title.form-control(type='text' name='title')
+    div.mb-3
+        label.form-label.text-decoration-underline(for='title') Precio del Producto:
+        input#price.form-control(type='number' name='price')
+    div.mb-3
+        label.form-label.text-decoration-underline(for='title') Imagen del Producto:
+        input#thumbnail.form-control(type='text' name='thumbnail')
+    button.btn.btn-primary.me-3(type='submit' value='submit') Agregar Producto
+    a.btn.btn-primary(href='api/products') Ver Productos
