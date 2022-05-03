@@ -1,0 +1,32 @@
+<header class='container mb-3'>
+    <h1 class='text-center text-decoration-underline fst-italic'>Vista de Productos</h1>
+</header>
+
+<% if(products.length > 0) { %>
+    <div class='table-responsive'>
+        <table class='table table-dark table-hover container'>
+            <thead>
+                <tr style='color: white; font-style: italic'>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(item => { %>
+                    <tr>
+                        <th style='font-weight: lighter'><%= item.id %></th>
+                        <th style='font-weight: lighter'><%= item.title %></th>
+                        <th style='font-weight: lighter'><%= item.price %></th>
+                        <th><img width='40' height='40' src='<%=item.thumbnail %>' alt='img' /></th>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href='/api' class='btn btn-primary'>Ir al Formulario</a>
+    </div>
+<% } else { %>
+    <h3 class='alert alert-danger'>¡No hay productos agregados!</h3>
+    <a href='/api' class='btn btn-primary'>Ir al Formulario</a>
+<% } %>

@@ -1,0 +1,19 @@
+<header class='container'>
+    <h1 class='text-center text-decoration-underline fst-italic'>Ingrese un Producto</h1>
+</header>
+<form action='api/products' method='POST' class='container'>
+    <div class='mb-3'>
+        <label for='title' class='form-label text-decoration-underline'>Nombre del Producto:</label>
+        <input type='text' class='form-control' id='title' name='title'/>
+    </div>
+    <div class='mb-3'>
+        <label for='price' class='form-label text-decoration-underline'>Precio del Producto:</label>
+        <input type='number' class='form-control' id='price' name='price'/>
+    </div>
+    <div class='mb-3'>
+        <label for='thumbnail' class='form-label text-decoration-underline'>Imagen del Producto:</label>
+        <input type='text' class='form-control' id='thumbnail' name='thumbnail'/>
+    </div>
+    <button type='submit' value='submit' class='btn btn-primary me-3'>Agregar Producto</button>
+    <a href='api/products' class='btn btn-primary'>Ver Productos</a>
+</form>

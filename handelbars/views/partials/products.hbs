@@ -1,0 +1,32 @@
+<header class='container mb-3'>
+    <h1 class='text-center text-decoration-underline fst-italic'>Vista de Productos</h1>
+</header>
+
+{{#if products}}
+    <div class='table-responsive'>
+        <table class='table table-dark table-hover container'>
+            <thead>
+                <tr style='color: white; font-style: italic'>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                    <tr>
+                        <th style='font-weight: lighter'>{{this.id}}</th>
+                        <th style='font-weight: lighter'>{{this.title}}</th>
+                        <th style='font-weight: lighter'>{{this.price}}</th>
+                        <th><img width='40' height='40' src={{this.thumbnail}} alt='img' /></th>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <a href='/api' class='btn btn-primary'>Ir al Formulario</a>
+    </div>
+{{else}}
+    <h3 class='alert alert-danger'>¡No hay productos agregados!</h3>
+    <a href='/api' class='btn btn-primary'>Ir al Formulario</a>
+{{/if}}
